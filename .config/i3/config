@@ -300,6 +300,9 @@ for_window [class="Viewnior"] floating enable
 for_window [class="Audacious"] floating enable
 for_window [class="smplayer"] floating enable
 
+# No Floating
+#for_window [workspace=$workspace7] floating disable
+
 # window rules, you can find the window class using xprop
 for_window [class=".*"] border pixel 4
 

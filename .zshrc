@@ -1,9 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 #export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk"
+export JAVA_HOME="/usr/lib/jvm/java-17-openjdk"
 export ANDROID_HOME="$HOME/Android/Sdk"
-export PATH="$HOME:/usr/lib/jvm/java-11-openjdk/bin/:~/Android/Sdk/tools/:~/Android/Sdk/emulator/:~/.local/bin:$PATH"
+export PATH="/opt/flutter/:$HOME:/usr/lib/jvm/java-17-openjdk/bin/:~/Android/Sdk/tools/:~/Android/Sdk/emulator/:~/.local/bin:$PATH"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
