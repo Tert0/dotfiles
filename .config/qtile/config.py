@@ -204,24 +204,34 @@ layouts = [
     # layout.Zoomy(),
 ]
 
-widget_defaults = dict(
-    font="Font Awesome 5 Free",
-    fontsize=12,
-    padding=3,
-)
-extension_defaults = widget_defaults.copy()
 colors = {
     "background": "#222222",
-    "background-focus": "#444444",
+    "background-focus": "#004152",
     "foreground": "#dfdfdf",
     "widget1": "#002B36",  # ff3c38 048a81
-    "widget2": "#839496",  # a23e48 32a287
+    "seperator": "#002129",
 }
+
+widget_defaults = dict(
+    font="Font Awesome 5 Free",
+    #font="Ubuntu Mono",
+    fontsize=12,
+    padding=5,
+    background=colors["widget1"]
+)
+extension_defaults = widget_defaults.copy()
 
 bar_size = 30
 
 
 def create_widget_seperator(left: str, right: str) -> widget.TextBox:
+    return widget.TextBox(
+        text="|",
+        fontsize=bar_size*1.9,
+        padding=0,
+        margin=0,
+        foreground=colors["seperator"]
+    )
     return widget.TextBox(
         text="",
         fontsize=bar_size*1.9,
@@ -236,7 +246,7 @@ powerline_bar = [
     create_widget_seperator("background", "widget2"),
     widget.WindowName(
         font="sans",
-        background=colors["widget2"],
+        background=colors["widget1"],
         max_chars=50,
     ),
     create_widget_seperator("widget2", "widget1"),
@@ -245,7 +255,7 @@ powerline_bar = [
     ),
     create_widget_seperator("widget1", "widget2"),
     widget.CheckUpdates(
-        background=colors["widget2"],
+        background=colors["widget1"],
         display_format=" {updates}",
         distro="Arch_paru",
     ),
@@ -258,7 +268,7 @@ powerline_bar = [
     create_widget_seperator("widget1", "widget2"),
     widget.Memory(
         format=" {MemPercent}%",
-        background=colors["widget2"],
+        background=colors["widget1"],
     ),
     create_widget_seperator("widget2", "widget1"),
     widget.CPU(
@@ -268,7 +278,7 @@ powerline_bar = [
     create_widget_seperator("widget1", "widget2"),
     widget.ThermalSensor(
         fmt=" {}",
-        background=colors["widget2"],
+        background=colors["widget1"],
     ),
     create_widget_seperator("widget2", "widget1"),
     widget.Volume(
@@ -278,7 +288,7 @@ powerline_bar = [
     create_widget_seperator("widget1", "widget2"),
     widget.Clock(
         format=" %a, %b %e - %R",
-        background=colors["widget2"],
+        background=colors["widget1"],
     ),
     create_widget_seperator("widget2", "widget1"),
     widget.QuickExit(
